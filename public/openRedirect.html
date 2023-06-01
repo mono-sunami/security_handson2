@@ -1,0 +1,24 @@
+<!DOCTYPE html>
+<html lang="ja">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>オープンリダイレクト</title>
+  </head>
+  <body>
+    <h1>オープンリダイレクト</h1>
+    <script>
+      const url = new URL(location.href);
+      const redirectURL = url.searchParams.get('url');
+      if (redirectURL) {
+        // コメントアウト②
+        // const redirectURLObj = new URL(redirectURL, location.href);
+        // if(redirectURLObj.origin === location.origin) {
+        //   location.href = redirectURL;
+        // }
+        location.href = redirectURL;
+      }
+    </script>
+  </body>
+</html>
