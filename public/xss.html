@@ -13,7 +13,15 @@
     const url = new URL(location.href);
     const message = url.searchParams.get('message');
     if(message) {
+      // innerHTMLを使うと、scriptタグが実行されてしまう
       document.getElementById('result').innerHTML = message;
+
+      // innerHTMLを変更すると、scriptタグが実行されない
+      // document.getElementById('result').textNode = message;
+
+      // パラメータをテキストノードとして扱う
+      // const textNode = document.createTextNode(message);
+      // document.getElementById('result').appendChild(textNode);
     }
   </script>
 </body>
